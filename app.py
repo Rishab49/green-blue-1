@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Green Deployment #1"
+    return "Red Deployment"
 
 
 if __name__ == "__main__":

@@ -6,11 +6,15 @@ services:
     build: .
     ports:
       - "5000:5000"
+    networks:
+      - loadbalancing
 
   green:
     build: .
     ports:
       - "5001:5000"
+    networks:
+      - loadbalancing
 
   nginx:
     image: nginx:latest
@@ -21,3 +25,8 @@ services:
     depends_on:
       - red
       - green
+    networks:
+      - loadbalancing
+
+networks:
+  - loadbalancing

@@ -9,7 +9,7 @@ services:
     networks:
       - loadbalancing
 
-   green:
+  green:
     build: .
     ports:
       - "5001:5000"
